@@ -12,7 +12,7 @@
                 <RowDefinition Height="13*" x:Name="myRow"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100" x:Name="myColumn"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Button x:Name="button" Content="Settings" VerticalAlignment="Top" Click="button_Click"/>

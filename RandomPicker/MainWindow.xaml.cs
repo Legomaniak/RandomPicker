@@ -27,8 +27,6 @@ namespace RandomPicker
         {
             InitializeComponent();
             casovac = new Timer(tick);
-            //this.WindowState = WindowState.Maximized;
-            //this.WindowStyle = WindowStyle.None;
             if (Directory.Exists(Properties.Settings.Default.cesta)) cesta = Properties.Settings.Default.cesta;
 
             if (Directory.Exists(cesta))
@@ -40,6 +38,21 @@ namespace RandomPicker
             myRow.Height = new GridLength(0);
 
             image.image.MouseUp += Image_MouseUp;
+            this.KeyUp += MainWindow_KeyUp;
+        }
+
+        private void MainWindow_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(e.Key==Key.F)//to fullscreen
+            {
+                this.WindowStyle = WindowStyle.None;
+                myColumn.Width = new GridLength(0);
+            }
+            else if(e.Key==Key.Escape)//from fullscreen
+            {
+                this.WindowStyle = WindowStyle.SingleBorderWindow;
+                myColumn.Width = new GridLength(100);
+            }
         }
 
         private void Image_MouseUp(object sender, MouseButtonEventArgs e)
