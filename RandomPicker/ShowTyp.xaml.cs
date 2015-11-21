@@ -31,6 +31,7 @@ namespace RandomPicker
             {
                 if (radek.Substring(0, 1) != "#")
                 {
+                    //identificator space translate (A Awesome)
                     string[] s = radek.Split(' ');
                     Slovnik.Add(s[0], radek.Substring(s[0].Length + 1));
                     SlovnikR.Add(radek.Substring(s[0].Length + 1), s[0]);

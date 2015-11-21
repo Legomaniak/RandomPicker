@@ -29,6 +29,7 @@ namespace RandomPicker
             {
                 if (radek.Substring(0, 1) != "#")
                 {
+                    //nameOfFile space textOfCard  (A-001 First card)
                     string[] s = radek.Split(' ');
                     Slovnik.Add(s[0], radek.Substring(s[0].Length + 1));
                     radek = sr.ReadLine();
