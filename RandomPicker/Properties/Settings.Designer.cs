@@ -130,5 +130,17 @@ namespace RandomPicker.Properties {
                 this["showText"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool innerSearch {
+            get {
+                return ((bool)(this["innerSearch"]));
+            }
+            set {
+                this["innerSearch"] = value;
+            }
+        }
     }
 }

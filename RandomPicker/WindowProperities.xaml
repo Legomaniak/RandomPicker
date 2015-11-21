@@ -7,33 +7,45 @@
         mc:Ignorable="d"
         Title="WindowProperities" Height="300" Width="300">
     <Grid>
-        <Button x:Name="button" Content="Directory" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Click="button_Click"/>
-        <GroupBox x:Name="groupBox" Header="Decoder" HorizontalAlignment="Left" Margin="106,1,0,0" VerticalAlignment="Top" Height="155" Width="143">
-            <Grid>
-                <Label x:Name="label" Content="Type:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="95,4,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="26" TextChanged="textBox_TextChanged"/>
-                <Label x:Name="label_Copy" Content="StartIndex" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="32,0,0,0"/>
-                <Label x:Name="label_Copy1" Content="Length" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="32,26,0,0"/>
-                <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="23" Margin="95,30,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="26" TextChanged="textBox_Copy_TextChanged"/>
-                <Label x:Name="label_Copy2" Content="Number:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,56,0,0"/>
-                <TextBox x:Name="textBox_Copy2" HorizontalAlignment="Left" Height="24" Margin="95,80,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="26" TextChanged="textBox_TextChanged2"/>
-                <Label x:Name="label_Copy4" Content="StartIndex" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="32,76,0,0"/>
-                <Label x:Name="label_Copy5" Content="Length" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="32,102,0,0"/>
-                <TextBox x:Name="textBox_Copy3" HorizontalAlignment="Left" Height="24" Margin="95,106,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top" Width="26" TextChanged="textBox_Copy_TextChanged2"/>
-            </Grid>
-        </GroupBox>
-        <GroupBox x:Name="groupBox_Copy" Header="Timer" HorizontalAlignment="Right" Margin="0,20,186,0" VerticalAlignment="Top" Height="80" Width="105">
-            <Grid>
-                <Label x:Name="label_Copy3" Content="Time" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,15,0,0" ToolTip="In milisecond"/>
-                <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="23" Margin="36,19,0,0" TextWrapping="Wrap" Text="3000" VerticalAlignment="Top" Width="54" TextChanged="textBox_Copy1_TextChanged"/>
-                <CheckBox x:Name="checkBox" Content="Enable" HorizontalAlignment="Left" VerticalAlignment="Top" FlowDirection="RightToLeft" Margin="5,0,0,0" Click="checkBox_Click"/>
-                <CheckBox x:Name="checkBox_Copy" Content="Forgoting" HorizontalAlignment="Left" VerticalAlignment="Top" FlowDirection="RightToLeft" Margin="5,42,0,0" Click="checkBox_Copy_Click"/>
-             </Grid>
-        </GroupBox>
-        <GroupBox x:Name="groupBox1" Header="Text" HorizontalAlignment="Left" Margin="0,100,0,0" VerticalAlignment="Top" Height="56" Width="106">
-            <CheckBox x:Name="checkBox_text" Content="Show Text" HorizontalAlignment="Left" VerticalAlignment="Top" FlowDirection="RightToLeft" Margin="0,0,0,0" Click="checkBox_Text_Click"/>
+        <TabControl x:Name="tabControl" Margin="1,0,10,0">
+            <TabItem Header="Directory">
+                <Grid>
+                    <Button x:Name="button" Content="Directory" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Click="button_Click"/>
+                    <CheckBox x:Name="checkBox_dir" Content="Search in inner directory" HorizontalAlignment="Left" VerticalAlignment="Top" FlowDirection="RightToLeft" Click="checkBox_Dir_Click" Margin="0,25,0,0"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Timer">
+                <Grid>
+                    <Label x:Name="label_Copy3" Content="Time" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,17,0,0" ToolTip="In milisecond"/>
+                    <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="23" Margin="41,20,0,0" TextWrapping="Wrap" Text="3000" VerticalAlignment="Top" Width="54" TextChanged="textBox_Copy1_TextChanged"/>
+                    <CheckBox x:Name="checkBox" Content="Enable" HorizontalAlignment="Left" VerticalAlignment="Top" FlowDirection="RightToLeft" Click="checkBox_Click" Margin="4,0,0,0"/>
+                    <CheckBox x:Name="checkBox_Copy" Content="Forgoting" HorizontalAlignment="Left" VerticalAlignment="Top" FlowDirection="RightToLeft" Margin="4,48,0,0" Click="checkBox_Copy_Click"/>
 
-        </GroupBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Text">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <CheckBox x:Name="checkBox_text" Content="Show Text" HorizontalAlignment="Left" VerticalAlignment="Top" FlowDirection="RightToLeft" Click="checkBox_Text_Click" Margin="10,0,0,0"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Decoder">
+                <Grid>
+                    <Label x:Name="label" Content="Type:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,-2,0,0"/>
+                    <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="22" Margin="115,2,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="26" TextChanged="textBox_TextChanged"/>
+                    <Label x:Name="label_Copy" Content="StartIndex" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="47,-2,0,0"/>
+                    <Label x:Name="label_Copy1" Content="Length" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="52,24,0,0"/>
+                    <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="22" Margin="115,28,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="26" TextChanged="textBox_Copy_TextChanged"/>
+                    <Label x:Name="label_Copy2" Content="Number:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,55,0,0"/>
+                    <TextBox x:Name="textBox_Copy2" HorizontalAlignment="Left" Height="24" Margin="115,78,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="26" TextChanged="textBox_TextChanged2"/>
+                    <Label x:Name="label_Copy4" Content="StartIndex" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="47,74,0,0"/>
+                    <Label x:Name="label_Copy5" Content="Length" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="52,100,0,0"/>
+                    <TextBox x:Name="textBox_Copy3" HorizontalAlignment="Left" Height="24" Margin="115,104,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top" Width="26" TextChanged="textBox_Copy_TextChanged2"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
 
     </Grid>
 </Window>

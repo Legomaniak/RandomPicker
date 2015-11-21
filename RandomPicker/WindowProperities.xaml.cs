@@ -30,6 +30,7 @@ namespace RandomPicker
             textBox_Copy2.Text = Properties.Settings.Default.startIndex2.ToString();
             textBox_Copy3.Text = Properties.Settings.Default.endIndex2.ToString();
             checkBox_text.IsChecked = Properties.Settings.Default.showText;
+            checkBox_dir.IsChecked = Properties.Settings.Default.innerSearch;
         }
         private void button_Click(object sender, RoutedEventArgs e)
         {
@@ -96,6 +97,12 @@ namespace RandomPicker
         private void checkBox_Text_Click(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.showText = checkBox_text.IsChecked.Value;
+            Properties.Settings.Default.Save();
+        }
+
+        private void checkBox_Dir_Click(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.innerSearch = checkBox_dir.IsChecked.Value;
             Properties.Settings.Default.Save();
         }
     }

@@ -9,7 +9,7 @@ namespace RandomPicker
 {
     class Loader
     {
-        public bool PodDirecory = false;
+        public bool PodDirecory = Properties.Settings.Default.innerSearch;
         public List<Card> Karty = new List<Card>();
         Decoder decoder = new Decoder();
         int counter = 0;

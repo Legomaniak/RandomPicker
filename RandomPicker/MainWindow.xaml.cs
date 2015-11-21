@@ -45,6 +45,7 @@ namespace RandomPicker
         {
             if(e.Key==Key.F)//to fullscreen
             {
+                this.WindowState = WindowState.Maximized;
                 this.WindowStyle = WindowStyle.None;
                 myColumn.Width = new GridLength(0);
             }
