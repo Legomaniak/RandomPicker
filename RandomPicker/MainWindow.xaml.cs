@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Ribbon;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -37,7 +38,15 @@ namespace RandomPicker
                 showTyp.Init(sorter.GetTypy());
             }
             myRow.Height = new GridLength(0);
+
+            image.image.MouseUp += Image_MouseUp;
         }
+
+        private void Image_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            NextCard();
+        }
+
         Loader loader = new Loader();
         Sorter sorter = new Sorter();
         string cesta;
@@ -79,7 +88,7 @@ namespace RandomPicker
             Card k = null;
             if (Karty.Count > 0)
             {
-                k = (Karty.Count == 1) ? Karty[0] : Karty[r.Next(1, Karty.Count)];
+                k = (Karty.Count == 1) ? Karty[0] : Karty[r.Next(0, Karty.Count)];
                 if (Properties.Settings.Default.forgoting) Karty.Remove(k);
             }
             Show(k);

@@ -6,20 +6,20 @@
         xmlns:local="clr-namespace:RandomPicker"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525" ResizeMode="CanResizeWithGrip">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="306*"/>
-            <RowDefinition Height="13*" x:Name="myRow"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Button x:Name="button" Content="Settings" VerticalAlignment="Top" Click="button_Click"/>
-        <local:ShowTyp x:Name="showTyp" Margin="0,20,0,30.843"/>
-        <Button x:Name="button1" Content="Play" VerticalAlignment="Bottom" Click="button1_Click" Grid.RowSpan="2"/>
-        <local:MyLabel x:Name="text" Grid.Column="1" Grid.Row="1" />
-        <local:MyImage x:Name="image" Grid.Column="1"/>
+    <Grid Margin="0,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="306*"/>
+                <RowDefinition Height="13*" x:Name="myRow"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="button" Content="Settings" VerticalAlignment="Top" Click="button_Click"/>
+            <local:ShowTyp x:Name="showTyp" Margin="0,20,0,30.843"/>
+            <Button x:Name="button1" Content="Play" VerticalAlignment="Bottom" Click="button1_Click" Grid.RowSpan="2"/>
+            <local:MyLabel x:Name="text" Grid.Column="1" Grid.Row="1" />
+            <local:MyImage x:Name="image" Grid.Column="1"/>
 
     </Grid>
 </Window>

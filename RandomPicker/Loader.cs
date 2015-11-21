@@ -27,9 +27,12 @@ namespace RandomPicker
             string radek = sr.ReadLine();
             while (radek != null)
             {
-                string[] s = radek.Split(' ');
-                Slovnik.Add(s[0], radek.Substring(s[0].Length + 1));
-                radek = sr.ReadLine();
+                if (radek.Substring(0, 1) != "#")
+                {
+                    string[] s = radek.Split(' ');
+                    Slovnik.Add(s[0], radek.Substring(s[0].Length + 1));
+                    radek = sr.ReadLine();
+                }
             }
         }
         public void Nacti(string cesta)
