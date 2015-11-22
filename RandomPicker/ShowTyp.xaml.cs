@@ -35,8 +35,8 @@ namespace RandomPicker
                     string[] s = radek.Split(' ');
                     Slovnik.Add(s[0], radek.Substring(s[0].Length + 1));
                     SlovnikR.Add(radek.Substring(s[0].Length + 1), s[0]);
-                    radek = sr.ReadLine();
                 }
+                radek = sr.ReadLine();
             }
         }
         Dictionary<string, string> Slovnik = new Dictionary<string, string>();
